@@ -1,0 +1,34 @@
+# Score Specification version
+apiVersion: score.dev/v1b1
+
+# Defines metadata description of your Workload
+metadata:
+  # Specifies a string that can describe your Workload
+  name: quickstart
+
+# Defines how an application can expose its resources when executed.
+service:
+  ports:
+    # Specifies the port name
+    www:
+      # The port to expose to an external application
+      port: 8080
+      # The port to expose on the host. If the targetPort isn’t specified, then it defaults to the required port property in the container
+      targetPort: 8080
+
+# Defines how the Workload’s tasks are executed
+containers:
+  # Specifies a name of the container image
+  hello-world:
+    # Docker image name and tag
+    image: ghcr.io/astromechza/demo-app:latest
+    # Specifies environment variable
+    variables:
+      OVERRIDE_MOTD: ${resources.env.MOTD}
+      OVERRIDE_POSTGRES: "postgres://${resources.db.username}:${resources.db.password}@${resources.db.host}:${resources.db.port}/${resources.db.name}"
+
+resources:
+  db:
+    type: postgres
+  env:
+    type: environment

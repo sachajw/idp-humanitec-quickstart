@@ -1,0 +1,1 @@
+echo "Creating and deleting a publicly accessible generic convenience cluster is not supported by the Quickstart at the moment"

@@ -1,0 +1,1 @@
+echo "No cluster access needs to be configured when using a generic cluster"

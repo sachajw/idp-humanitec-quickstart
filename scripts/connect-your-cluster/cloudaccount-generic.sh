@@ -1,0 +1,1 @@
+echo "No Cloud Account is used for accessing a generic cluster"
