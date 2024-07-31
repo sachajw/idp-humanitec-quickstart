@@ -1,6 +1,6 @@
 
 cat << EOF > resdef-aws.yaml
-# Connect to an EKS cluster using dynamic credentials defined via a Cloud Account
+# Connect to an EKS cluster using temporary credentials defined via a Cloud Account
 apiVersion: entity.humanitec.io/v1b1
 kind: Definition
 metadata:

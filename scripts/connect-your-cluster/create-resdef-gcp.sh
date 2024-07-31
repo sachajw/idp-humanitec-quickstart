@@ -1,7 +1,7 @@
 export GKE_CLUSTER_ZONE=$(gcloud container clusters describe ${GKE_CLUSTER_NAME} --region ${GKE_CLUSTER_REGION} --format="get(zone)")
 
 cat << EOF > resdef-gcp.yaml
-# Connect to a GKE cluster using dynamic credentials defined via a Cloud Account
+# Connect to a GKE cluster using temporary credentials defined via a Cloud Account
 apiVersion: entity.humanitec.io/v1b1
 kind: Definition
 metadata:

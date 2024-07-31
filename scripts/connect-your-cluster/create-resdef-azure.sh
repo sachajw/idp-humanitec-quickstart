@@ -1,7 +1,7 @@
 export SUBSCRIPTION_ID=$(az account show --query id -o tsv)
 
 cat << EOF > resdef-azure.yaml
-# Connect to an AKS cluster using dynamic credentials defined via a Cloud Account
+# Connect to an AKS cluster using temporary credentials defined via a Cloud Account
 apiVersion: entity.humanitec.io/v1b1
 kind: Definition
 metadata:
